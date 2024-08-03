@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>正方形中的最多点数</title>
+    <link href="/2024/08/03/%E6%AD%A3%E6%96%B9%E5%BD%A2%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%9A%E7%82%B9%E6%95%B0/"/>
+    <url>/2024/08/03/%E6%AD%A3%E6%96%B9%E5%BD%A2%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%9A%E7%82%B9%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="leetcode"><a href="#leetcode" class="headerlink" title="leetcode"></a>leetcode</h1><p>题目：</p><blockquote><p>给你一个二维数组<code>points</code> 和一个字符串<code>s</code>，其中<code>points[i]</code>表示第 i 个点的坐标，<code>s[i]</code>表示第<code>i</code>个点的 标签 。</p><p>如果一个正方形的中心在<code>(0, 0)</code>，所有边都平行于坐标轴，且正方形内不存在标签相同的两个点，那么我们称这个正方形是合法的。</p><p>请你返回合法正方形中可以包含的最多点数。</p></blockquote><blockquote><p>注意：</p><ul><li>如果一个点位于正方形的边上或者在边以内，则认为该点位于正方形内。</li><li>正方形的边长可以为零。<br>提示：</li><li><code>1 &lt;= s.length, points.length &lt;= 10^5</code></li><li><code>points[i].length == 2</code></li><li><code>-10^9 &lt;= points[i][0], points[i][1] &lt;= 10^9</code></li><li><code>s.length == points.length</code></li><li><code>points</code> 中的点坐标互不相同。</li><li><code>s</code>只包含小写英文字母。</li></ul></blockquote><p>看到题目后。想到的第一种方法时，遍历<code>points</code>数组，然后将其中的点<code>points[i]</code>与<code>(0, 0)</code>的<strong>切比雪夫距离</strong>(<code>max(abs(points[i][0]), abs(points[i][1])</code>)作为下标，将<code>s[i]</code>作为值存储到一个二维数组<code>count</code>中。</p><p>在遍历完<code>points</code>数组后，从小到大遍历<code>count</code>，同时定义一个<code>visit</code>数组，用于表示标签是否在正方形。在<code>count[i]</code>中查看每个标签是否在正方形中，如果遍历完没有重复的标签，就将<code>cnt</code>加一，如果有重复就退出循环。然后返回<code>cnt</code>。</p><p>但因为<code>-10^9 &lt;= points[i][0], points[i][1] &lt;= 10^9</code>，测存储需要的空间太多。</p><p>然后想到标签只有26个，因此可以用标签作为下标，切比雪夫距离作为值存储到一个二维数组<code>count</code>中，当遍历完<code>points</code>数组后，将<code>count[i]</code>按从小到大排序，然后比较<code>count[i][0]</code>和<code>count[i][1]</code>，先定义一个<code>Max</code>,代表合法正方形的最大的边长的一半需要小于<code>Max</code>。如果两者相等，则合<code>Max</code>为<code>max(Max,count[i][1])</code>，如果两者不等，则<code>Max</code>为<code>max(Max,count[i][1])</code>.然后在遍历<code>count[i][0]</code>，如果<code>count[i][0]</code>小于<code>Max</code>，则<code>cnt</code>加一。最后返回<code>cnt</code>。</p><p>然后再写代码时发现，最后的比较阶段只利用了<code>count[i][0]</code>和<code>count[i][1]</code>，也就是最小切比雪夫距离和次小切比雪夫距离。然后再求<code>Max</code>时，可以直接<code>max(Max,count[i][1])</code>，因为两者相等时，<code>count[i][0]</code>和<code>count[i][1]</code>大小一致。</p><ul><li>c++代码<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c++">vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">count</span>(<span class="hljs-number">26</span>,<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(<span class="hljs-number">2</span>,INT_MAX));<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) <br>        &#123;<br>            <span class="hljs-type">int</span> temp = <span class="hljs-built_in">max</span>(<span class="hljs-built_in">abs</span>(points[i][<span class="hljs-number">0</span>]), <span class="hljs-built_in">abs</span>(points[i][<span class="hljs-number">1</span>]));<br>            <span class="hljs-keyword">if</span> (temp &lt; count[s[i] - <span class="hljs-string">&#x27;a&#x27;</span>][<span class="hljs-number">0</span>]) <br>            &#123;<br>                count[s[i] - <span class="hljs-string">&#x27;a&#x27;</span>][<span class="hljs-number">1</span>] = count[s[i] - <span class="hljs-string">&#x27;a&#x27;</span>][<span class="hljs-number">0</span>];<br>                count[s[i] - <span class="hljs-string">&#x27;a&#x27;</span>][<span class="hljs-number">0</span>] = temp;<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (temp &lt; count[s[i] - <span class="hljs-string">&#x27;a&#x27;</span>][<span class="hljs-number">1</span>])<br>            &#123;<br>                count[s[i] - <span class="hljs-string">&#x27;a&#x27;</span>][<span class="hljs-number">1</span>] = temp;<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> m = INT_MAX;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">26</span>; i++) <br>        &#123;<br>            m = <span class="hljs-built_in">min</span>(m, count[i][<span class="hljs-number">1</span>]);<br>        &#125;<br>        <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">26</span>; i++)<br>        &#123;<br>            <span class="hljs-keyword">if</span> (count[i][<span class="hljs-number">0</span>] &lt; m) <br>            &#123;<br>                ans++;<br>            &#125;<br>        &#125;<br></code></pre></td></tr></table></figure></li></ul><p>再查看题解后还有一种思路是二分查找。</p><p>通过二分正方形的边长，每次遍历整个<code>points</code>,如果<code>points[i]</code>不在正方形内，则退出，更新二分的<code>left</code>和<code>right</code>.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>二分查找</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>路由分组</title>
     <link href="/2024/08/02/%E8%B7%AF%E7%94%B1%E5%88%86%E7%BB%84/"/>
     <url>/2024/08/02/%E8%B7%AF%E7%94%B1%E5%88%86%E7%BB%84/</url>
