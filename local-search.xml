@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>另一棵树的子树</title>
+    <link href="/2024/08/04/%E5%8F%A6%E4%B8%80%E6%A3%B5%E6%A0%91%E7%9A%84%E5%AD%90%E6%A0%91/"/>
+    <url>/2024/08/04/%E5%8F%A6%E4%B8%80%E6%A3%B5%E6%A0%91%E7%9A%84%E5%AD%90%E6%A0%91/</url>
+    
+    <content type="html"><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><blockquote><p>给你两棵二叉树 <code>root</code> 和 <code>subRoot</code> 。检验 <code>root</code> 中是否包含和 <code>subRoot</code> 具有相同结构和节点值的子树。如果存在，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p><p>二叉树 <code>tree</code> 的一棵子树包括 <code>tree</code> 的某个节点和这个节点的所有后代节点。<code>tree</code> 也可以看做它自身的一棵子树。</p><p>提示：</p><ul><li><code>root</code> 树上的节点数量范围是 <code>[1, 2000]</code></li><li><code>subRoot</code> 树上的节点数量范围是 <code>[1, 1000]</code></li><li><code>-10^4 &lt;= root.val &lt;= 10^4</code></li><li><code>-10^4 &lt;= subRoot.val &lt;= 10^4</code></li></ul></blockquote><p>刚开始看到题目，想到的思路是，从头开始遍历 <code>root</code> ，直到遍历到<code>root-&gt;val</code>与<code>subRoot-&gt;val</code>值相同时，开始同时遍历<code>root</code> 和 <code>subRoot</code>，如果直到遍历完<code>subRoot</code>，<code>root-&gt;val</code>与<code>subRoot-&gt;val</code>一直相同，则符合条件，返回<code>true</code>.如果在遍历完之前有不一样的值就从<code>root</code>的当前节点重新与<code>subRoot</code>开始比对。</p><p>在写完以上的代码进行测试时发现如果<code>subRoot</code>里面存在<code>val</code>相同的节点，那么可能会遗落一些情况。</p><p>如是开始重新思考思路，我们遍历<code>root</code>的每一个节点，然后在每一个节点和<code>subRoot</code>同时开始遍历，如果两者拥有相同的结构和值，就代表符合条件。</p><p>c++代码</p><blockquote><p>判断两棵树是否具有的结构和值</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs C++">function&lt;<span class="hljs-type">bool</span>(TreeNode*, TreeNode*)&gt; dfs = [&amp;](TreeNode* r, TreeNode* sub)-&gt;<span class="hljs-type">bool</span><br>&#123;<br><span class="hljs-keyword">if</span> (r == <span class="hljs-literal">nullptr</span>)<br>&#123;<br><span class="hljs-keyword">if</span> (sub == <span class="hljs-literal">nullptr</span>)<br>&#123;<br><span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><span class="hljs-keyword">else</span><br>&#123;<br><span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br>&#125;<br><span class="hljs-keyword">else</span><br>&#123;<br><span class="hljs-keyword">if</span> (sub == <span class="hljs-literal">nullptr</span>)<br>&#123;<br><span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br><span class="hljs-keyword">else</span><br>&#123;<br><span class="hljs-keyword">if</span> (r-&gt;val == sub-&gt;val)<br>&#123;<br><span class="hljs-keyword">return</span> <span class="hljs-built_in">dfs</span>(r-&gt;left, sub-&gt;left) &amp;&amp; <span class="hljs-built_in">dfs</span>(r-&gt;right, sub-&gt;right);<br>&#125;<br><span class="hljs-keyword">else</span><br>&#123;<br><span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br>&#125;<br>&#125;<br>&#125;;<br></code></pre></td></tr></table></figure><p>遍历root</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c++">&gt;function&lt;<span class="hljs-type">bool</span>(TreeNode*)&gt; f = [&amp;](TreeNode* r)-&gt;<span class="hljs-type">bool</span><br>&#123;<br><span class="hljs-keyword">if</span> (r != <span class="hljs-literal">nullptr</span>)<br>&#123;<br><span class="hljs-keyword">if</span> (<span class="hljs-built_in">dfs</span>(r, subRoot))<br>&#123;<br><span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><span class="hljs-keyword">else</span><br>&#123;<br><span class="hljs-keyword">return</span> <span class="hljs-built_in">f</span>(r-&gt;left) || <span class="hljs-built_in">f</span>(r-&gt;right);<br>&#125;<br>&#125;<br><span class="hljs-keyword">else</span><br>&#123;<br><span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br>&#125;;<br></code></pre></td></tr></table></figure></blockquote><p>看完题解后发现还有一种思路，就是按照前序遍历的顺序将<code>root</code>的值加入一个序列，并加入两个空值 <code>lNull</code> 和 <code>rNull</code>。同理将<code>subRoot</code>也同样输出一个前序遍历序列，如果<code>subRoot</code>是<code>root</code>的子树，则<code>subRoot</code>的序列是<code>root</code>的子序列。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>dfs</tag>
+      
+      <tag>树</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>因特网5层网络模型</title>
     <link href="/2024/08/03/%E5%9B%A0%E7%89%B9%E7%BD%915%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/"/>
     <url>/2024/08/03/%E5%9B%A0%E7%89%B9%E7%BD%915%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>

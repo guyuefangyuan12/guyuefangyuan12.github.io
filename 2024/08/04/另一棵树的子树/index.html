@@ -19,25 +19,23 @@
   <meta name="author" content="古月方源">
   <meta name="keywords" content="">
   
-    <meta name="description" content="电路交换电路交换是不同于分组交换的一种交换方式。 电路交换在计算机网络中主要采用一下两种方式，频分复用（FDM）和时分复用（TDM）  频分复用 频分复用就是这个网络传输的总带宽为B，如果主机A与主机B之间存在N条链路，如果为每条链路分配同样的资源，那么每条链路就会占用B&#x2F;N宽的频带来传输分组 如下图所示,整个网络带宽为20，总共有5条链路，每条链路占用4    时分复用 时分复用就是将整个网络的">
+    <meta name="description" content="题目 给你两棵二叉树 root 和 subRoot 。检验 root 中是否包含和 subRoot 具有相同结构和节点值的子树。如果存在，返回 true ；否则，返回 false 。 二叉树 tree 的一棵子树包括 tree 的某个节点和这个节点的所有后代节点。tree 也可以看做它自身的一棵子树。 提示：  root 树上的节点数量范围是 [1, 2000] subRoot 树上的节点数量范围">
 <meta property="og:type" content="article">
-<meta property="og:title" content="因特网5层网络模型">
-<meta property="og:url" content="https://guyuefangyuan12.github.io/2024/08/03/%E5%9B%A0%E7%89%B9%E7%BD%915%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:title" content="另一棵树的子树">
+<meta property="og:url" content="https://guyuefangyuan12.github.io/2024/08/04/%E5%8F%A6%E4%B8%80%E6%A3%B5%E6%A0%91%E7%9A%84%E5%AD%90%E6%A0%91/index.html">
 <meta property="og:site_name" content="古月方源">
-<meta property="og:description" content="电路交换电路交换是不同于分组交换的一种交换方式。 电路交换在计算机网络中主要采用一下两种方式，频分复用（FDM）和时分复用（TDM）  频分复用 频分复用就是这个网络传输的总带宽为B，如果主机A与主机B之间存在N条链路，如果为每条链路分配同样的资源，那么每条链路就会占用B&#x2F;N宽的频带来传输分组 如下图所示,整个网络带宽为20，总共有5条链路，每条链路占用4    时分复用 时分复用就是将整个网络的">
+<meta property="og:description" content="题目 给你两棵二叉树 root 和 subRoot 。检验 root 中是否包含和 subRoot 具有相同结构和节点值的子树。如果存在，返回 true ；否则，返回 false 。 二叉树 tree 的一棵子树包括 tree 的某个节点和这个节点的所有后代节点。tree 也可以看做它自身的一棵子树。 提示：  root 树上的节点数量范围是 [1, 2000] subRoot 树上的节点数量范围">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://guyuefangyuan12.github.io/2024/08/03/%E5%9B%A0%E7%89%B9%E7%BD%915%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/%E9%A2%91%E5%88%86%E5%A4%8D%E7%94%A8.png">
-<meta property="og:image" content="https://guyuefangyuan12.github.io/2024/08/03/%E5%9B%A0%E7%89%B9%E7%BD%915%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/%E6%97%B6%E5%88%86%E5%A4%8D%E7%94%A8.png">
-<meta property="og:image" content="https://guyuefangyuan12.github.io/2024/08/03/%E5%9B%A0%E7%89%B9%E7%BD%915%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84.jpg">
-<meta property="article:published_time" content="2024-08-03T12:06:00.000Z">
-<meta property="article:modified_time" content="2024-08-03T13:43:12.015Z">
+<meta property="article:published_time" content="2024-08-04T08:07:00.000Z">
+<meta property="article:modified_time" content="2024-08-04T08:30:29.112Z">
 <meta property="article:author" content="guyuefangyuan12">
+<meta property="article:tag" content="dfs">
+<meta property="article:tag" content="树">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://guyuefangyuan12.github.io/2024/08/03/%E5%9B%A0%E7%89%B9%E7%BD%915%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/%E9%A2%91%E5%88%86%E5%A4%8D%E7%94%A8.png">
   
   
   
-  <title>因特网5层网络模型 - 古月方源</title>
+  <title>另一棵树的子树 - 古月方源</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="因特网5层网络模型"></span>
+            <span id="subtitle" data-typed-text="另一棵树的子树"></span>
           
         </div>
 
@@ -227,8 +225,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-03 20:06" pubdate>
-          2024年8月3日 晚上
+        <time datetime="2024-08-04 16:07" pubdate>
+          2024年8月4日 下午
         </time>
       </span>
     
@@ -239,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          534 字
         
       </span>
     
@@ -250,7 +248,7 @@
         
         
         
-          12 分钟
+          5 分钟
         
       </span>
     
@@ -296,121 +294,33 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">因特网5层网络模型</h1>
+            <h1 id="seo-header">另一棵树的子树</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h1><p>电路交换是不同于分组交换的一种交换方式。</p>
-<p>电路交换在计算机网络中主要采用一下两种方式，频分复用（FDM）和时分复用（TDM）</p>
-<ol>
-<li>频分复用<blockquote>
-<p>频分复用就是这个网络传输的总带宽为<code>B</code>，如果主机A与主机B之间存在<code>N</code>条链路，如果为每条链路分配同样的资源，那么每条链路就会占用<code>B/N</code>宽的频带来传输分组</p>
-<p>如下图所示,整个网络带宽为20，总共有5条链路，每条链路占用4</p>
-<p><img src="/2024/08/03/%E5%9B%A0%E7%89%B9%E7%BD%915%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/%E9%A2%91%E5%88%86%E5%A4%8D%E7%94%A8.png" srcset="/img/loading.gif" lazyload alt="频分复用"></p>
-</blockquote>
-</li>
-<li>时分复用<blockquote>
-<p>时分复用就是将整个网络的传输资源为1帧，每一帧又划分为多个时隙，每个链路占据一定的时隙用来传输分组。</p>
-<p>如下图所示，一帧被分为4个时隙，分别被4条链路占据。</p>
-<p><img src="/2024/08/03/%E5%9B%A0%E7%89%B9%E7%BD%915%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/%E6%97%B6%E5%88%86%E5%A4%8D%E7%94%A8.png" srcset="/img/loading.gif" lazyload alt="时分复用"></p>
-</blockquote>
-</li>
-</ol>
-<p>电路交换和分组交换的比较</p>
-<blockquote>
-<p>电路交换和分组交换比起来，它会预先为每条链路预留资源，不管这条链路是否被使用，这些资源都会被使用，这样当一些链路不工作时，就会造成资源的浪费。但比起分组交换，他的传输延迟会较小，因为电路交换存在确定的链路，它不需要在路由器里等待存储。同时电路交换不会因为一条链路上需要传输的资源过多，导致其他链路也被拥塞</p>
-<p>但在分组交换中，因为不会出现所有的链路都在活跃的情况，因此分组交换在大多数情况下，能表现出比电路交换更好性能。</p>
-<p>电路交换就是一种固定分配资源的交换方式，而分组交换是一种按需分配资源的交换方式。从目前来看，分组交换是一种更普遍的方式</p>
-</blockquote>
-<h1 id="网络的结构"><a href="#网络的结构" class="headerlink" title="网络的结构"></a>网络的结构</h1><p>目前的因特网的网络结构包括如下组成</p>
+                <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><blockquote>
+<p>给你两棵二叉树 <code>root</code> 和 <code>subRoot</code> 。检验 <code>root</code> 中是否包含和 <code>subRoot</code> 具有相同结构和节点值的子树。如果存在，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
+<p>二叉树 <code>tree</code> 的一棵子树包括 <code>tree</code> 的某个节点和这个节点的所有后代节点。<code>tree</code> 也可以看做它自身的一棵子树。</p>
+<p>提示：</p>
 <ul>
-<li>接入ISP<blockquote>
-<p>接入ISP就是端系统或者主机，位于网络结构的底层</p>
-</blockquote>
-</li>
-<li>区域ISP<blockquote>
-<p>位于网络结构中间层的ISP提供者</p>
-</blockquote>
-</li>
-<li>第一级ISP<blockquote>
-<p>全球传输的ISP</p>
-</blockquote>
-</li>
-<li>多宿<blockquote>
-<p>一个ISP可以有多个ISP提供者，保证在一个ISP提供者出错时，网络能正常运行</p>
-</blockquote>
-</li>
-<li>对等<blockquote>
-<p>位于同一层次的临近ISP可以直接相连，他们彼此可以相互传输流量而不必付费(ISP客户向ISP提供者传输流量时需要付费)</p>
-</blockquote>
-</li>
-<li>IXP<blockquote>
-<p>IXP是一个交汇点，使不同层次的ISP对等</p>
-</blockquote>
-</li>
-<li>内容提供者<blockquote>
-<p>内容提供者位于最顶层，它相当于一个大型的服务器用来提供服务，他与第一级的ISP相连，并且传输时会付费，但它通过IXP相连的下级ISP就不必付费</p>
-</blockquote>
-</li>
+<li><code>root</code> 树上的节点数量范围是 <code>[1, 2000]</code></li>
+<li><code>subRoot</code> 树上的节点数量范围是 <code>[1, 1000]</code></li>
+<li><code>-10^4 &lt;= root.val &lt;= 10^4</code></li>
+<li><code>-10^4 &lt;= subRoot.val &lt;= 10^4</code></li>
 </ul>
-<p>下图是一个网络结构</p>
-<p><img src="/2024/08/03/%E5%9B%A0%E7%89%B9%E7%BD%915%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84.jpg" srcset="/img/loading.gif" lazyload alt="网络结构"></p>
-<h1 id="时延和吞吐量"><a href="#时延和吞吐量" class="headerlink" title="时延和吞吐量"></a>时延和吞吐量</h1><p>端到端的时延包括以下几类</p>
-<ul>
-<li>处理时延<blockquote>
-<p>在路由器节点的检查分组首部以及决定分组导向何处的时延</p>
 </blockquote>
-</li>
-<li>传输时延<blockquote>
-<p>节点将分组全部传输到链路的时间，如果分组长度为<code>L</code>,链路传输速率为<code>R</code>，则传输时延为<code>L/R</code>。</p>
-</blockquote>
-</li>
-<li>传播时延<blockquote>
-<p>分组从链路起点到链路终点的传播时间，如果链路长度为<code>d</code>,链路传播速率为<code>v</code>，则传播时延为<code>d/v</code></p>
-</blockquote>
-</li>
-<li>排队时延<blockquote>
-<p>分组因为拥塞原因，在路由器节点里面等待传输而造成的时延</p>
-</blockquote>
-</li>
-</ul>
-<p>传输时延和传播时延的比较</p>
+<p>刚开始看到题目，想到的思路是，从头开始遍历 <code>root</code> ，直到遍历到<code>root-&gt;val</code>与<code>subRoot-&gt;val</code>值相同时，开始同时遍历<code>root</code> 和 <code>subRoot</code>，如果直到遍历完<code>subRoot</code>，<code>root-&gt;val</code>与<code>subRoot-&gt;val</code>一直相同，则符合条件，返回<code>true</code>.如果在遍历完之前有不一样的值就从<code>root</code>的当前节点重新与<code>subRoot</code>开始比对。</p>
+<p>在写完以上的代码进行测试时发现如果<code>subRoot</code>里面存在<code>val</code>相同的节点，那么可能会遗落一些情况。</p>
+<p>如是开始重新思考思路，我们遍历<code>root</code>的每一个节点，然后在每一个节点和<code>subRoot</code>同时开始遍历，如果两者拥有相同的结构和值，就代表符合条件。</p>
+<p>c++代码</p>
 <blockquote>
-<p>传输时延相当于是节点把分组运送到链路的时间，传播时延是分组在链路上传输的时间，传输时延与分组长度和传输速率相关，而传播时延与链路长度和传输介质相关。</p>
+<p>判断两棵树是否具有的结构和值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs C++">function&lt;<span class="hljs-type">bool</span>(TreeNode*, TreeNode*)&gt; dfs = [&amp;](TreeNode* r, TreeNode* sub)-&gt;<span class="hljs-type">bool</span><br>&#123;<br>	<span class="hljs-keyword">if</span> (r == <span class="hljs-literal">nullptr</span>)<br>	&#123;<br>		<span class="hljs-keyword">if</span> (sub == <span class="hljs-literal">nullptr</span>)<br>		&#123;<br>			<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>		&#125;<br>		<span class="hljs-keyword">else</span><br>		&#123;<br>			<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">else</span><br>	&#123;<br>		<span class="hljs-keyword">if</span> (sub == <span class="hljs-literal">nullptr</span>)<br>		&#123;<br>			<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>		&#125;<br>		<span class="hljs-keyword">else</span><br>		&#123;<br>			<span class="hljs-keyword">if</span> (r-&gt;val == sub-&gt;val)<br>			&#123;<br>				<span class="hljs-keyword">return</span> <span class="hljs-built_in">dfs</span>(r-&gt;left, sub-&gt;left) &amp;&amp; <span class="hljs-built_in">dfs</span>(r-&gt;right, sub-&gt;right);<br>			&#125;<br>			<span class="hljs-keyword">else</span><br>			&#123;<br>				<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>			&#125;<br>		&#125;<br>	&#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>遍历root</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c++">&gt;function&lt;<span class="hljs-type">bool</span>(TreeNode*)&gt; f = [&amp;](TreeNode* r)-&gt;<span class="hljs-type">bool</span><br>		&#123;<br>			<span class="hljs-keyword">if</span> (r != <span class="hljs-literal">nullptr</span>)<br>			&#123;<br>				<span class="hljs-keyword">if</span> (<span class="hljs-built_in">dfs</span>(r, subRoot))<br>				&#123;<br>					<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>				&#125;<br>				<span class="hljs-keyword">else</span><br>				&#123;<br>					<span class="hljs-keyword">return</span> <span class="hljs-built_in">f</span>(r-&gt;left) || <span class="hljs-built_in">f</span>(r-&gt;right);<br>				&#125;<br>			&#125;<br>			<span class="hljs-keyword">else</span><br>			&#123;<br>				<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>			&#125;<br>		&#125;;<br></code></pre></td></tr></table></figure>
 </blockquote>
-<p>流量强度</p>
-<blockquote>
-<p><code>a</code>表示分到达队列的平均速率，则<code>La/R</code>为流量强度,如果<code>La/R</code>大于1，表明分组的到达速率大于分组的转发速率，这样会导致排队队列无线加长，<code>La/R</code>&lt;1这时的排队队列就会缩短。</p>
-<p>当流量强度在长时间内大于1时，排队队列超出路由器的缓存队列时就会导致丢包。</p>
-</blockquote>
-<p>吞吐量</p>
-<blockquote>
-<p>两个端系统之间的吞吐量取决于他们之间链路的最小传输速率。</p>
-</blockquote>
-<h1 id="5层网络模型"><a href="#5层网络模型" class="headerlink" title="5层网络模型"></a>5层网络模型</h1><p>5层网络模型包括以下5层</p>
-<ul>
-<li>应用层<blockquote>
-<p>应用层主要端系统上的应用服务程序，这一层主要使用的协议为HTTP(web文档)、SMTP(邮件)、FTP(文件传输)，这一层传输的分组被称为报文</p>
-</blockquote>
-</li>
-<li>运输层<blockquote>
-<p>运输层获取应用层报文，并加上运输层首部，形成这一层的分组，被称为报文段，这一层的协议只要有TCP和UDP</p>
-</blockquote>
-</li>
-<li>网络层<blockquote>
-<p>网络层把从运输层的报文段，加上网络层首部，形成这一层的分组，被称为数据报，这一层的协议只要有IP协议</p>
-</blockquote>
-</li>
-<li>链路层<blockquote>
-<p>网络层把从链路层的数据报，加上链路层首部，形成这一层的分组，被称为帧，这一层的协议只要有DOCSIS协议。</p>
-</blockquote>
-</li>
-<li>物理层<blockquote>
-<p>物理层的作用是把帧的一个个bit传输到下一个节点，该层的协议与传输所用的媒介有关。</p>
-</blockquote>
-</li>
-</ul>
+<p>看完题解后发现还有一种思路，就是按照前序遍历的顺序将<code>root</code>的值加入一个序列，并加入两个空值 <code>lNull</code> 和 <code>rNull</code>。同理将<code>subRoot</code>也同样输出一个前序遍历序列，如果<code>subRoot</code>是<code>root</code>的子树，则<code>subRoot</code>的序列是<code>root</code>的子序列。</p>
 
                 
               </div>
@@ -429,7 +339,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="category-chain-item">计算机网络</a>
+  <a href="/categories/leetcode/" class="category-chain-item">leetcode</a>
   
   
 
@@ -441,6 +351,15 @@
     </div>
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/dfs/" class="print-no-link">#dfs</a>
+      
+        <a href="/tags/%E6%A0%91/" class="print-no-link">#树</a>
+      
+    </div>
+  
 </div>
 
 
@@ -449,8 +368,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>因特网5层网络模型</div>
-      <div>https://guyuefangyuan12.github.io/2024/08/03/因特网5层网络模型/</div>
+      <div>另一棵树的子树</div>
+      <div>https://guyuefangyuan12.github.io/2024/08/04/另一棵树的子树/</div>
     </div>
     <div class="license-meta">
       
@@ -462,7 +381,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年8月3日</div>
+          <div>2024年8月4日</div>
         </div>
       
       
@@ -494,18 +413,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/04/%E5%8F%A6%E4%B8%80%E6%A3%B5%E6%A0%91%E7%9A%84%E5%AD%90%E6%A0%91/" title="另一棵树的子树">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">另一棵树的子树</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/08/03/%E6%AD%A3%E6%96%B9%E5%BD%A2%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%9A%E7%82%B9%E6%95%B0/" title="正方形中的最多点数">
-                        <span class="hidden-mobile">正方形中的最多点数</span>
+                      <a href="/2024/08/03/%E5%9B%A0%E7%89%B9%E7%BD%915%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/" title="因特网5层网络模型">
+                        <span class="hidden-mobile">因特网5层网络模型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
